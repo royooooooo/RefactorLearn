@@ -1,27 +1,27 @@
 package com.thoughtworks.reactor.day1;
 
 public class Rental {
-  private Movie movie;
-  private int dayRented;
+    private Movie movie;
+    private int dayRented;
 
-  Rental(Movie movie, int dayRented) {
-    this.movie = movie;
-    this.dayRented = dayRented;
-  }
+    Rental(Movie movie, int dayRented) {
+        this.movie = movie;
+        this.dayRented = dayRented;
+    }
 
-  public Movie getMovie() {
-    return movie;
-  }
+    Movie getMovie() {
+        return movie;
+    }
 
-  public void setMovie(Movie movie) {
-    this.movie = movie;
-  }
+    public void setMovie(Movie movie) {
+        this.movie = movie;
+    }
 
-  public int getDayRented() {
-    return dayRented;
-  }
+    int getDayRented() {
+        return dayRented;
+    }
 
-  public void setDayRented(int dayRented) {
-    this.dayRented = dayRented;
-  }
+    public void setDayRented(int dayRented) {
+        this.dayRented = dayRented;
+    }
 }

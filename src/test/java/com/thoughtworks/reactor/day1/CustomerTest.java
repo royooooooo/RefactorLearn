@@ -21,6 +21,6 @@ public class CustomerTest {
 
     @Test
     public void should_return_price_given_rental() {
-        assertEquals(customer.statement(),26);
+        assertEquals(customer.statement(), 26);
     }
 }
