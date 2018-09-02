@@ -12,6 +12,6 @@ public class Shopping {
         customer.addRental(rental3);
 
         System.out.println(String.format("hello %s, price is %s !",
-                customer.getName(), customer.statement()));
+                customer.getName(), customer.amountFor()));
     }
 }

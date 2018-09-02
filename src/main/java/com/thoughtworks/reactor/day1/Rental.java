@@ -9,7 +9,27 @@ public class Rental {
         this.dayRented = dayRented;
     }
 
-    Movie getMovie() {
+    int getPrice() {
+        int rentalPrice = 0;
+        switch (getMovie().getPriceCode()) {
+            case Movie.CHILDREN:
+                rentalPrice += 2;
+                if (getDayRented() > 2) rentalPrice += (getDayRented() - 1) * 2;
+                break;
+            case Movie.NEW_RELEASE:
+                rentalPrice += getDayRented() * 3;
+                break;
+            case Movie.REGULAR:
+                rentalPrice += 2;
+                if (getDayRented() > 3) rentalPrice += (getDayRented() - 3) * 3;
+                break;
+            default:
+                break;
+        }
+        return rentalPrice;
+    }
+
+    private Movie getMovie() {
         return movie;
     }
 
@@ -17,7 +37,7 @@ public class Rental {
         this.movie = movie;
     }
 
-    int getDayRented() {
+    private int getDayRented() {
         return dayRented;
     }
 

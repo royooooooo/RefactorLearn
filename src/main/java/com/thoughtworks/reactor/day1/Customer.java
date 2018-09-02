@@ -19,27 +19,7 @@ class Customer {
         return name;
     }
 
-    int statement() {
-        return rentals.stream().reduce(0, (sum, rental) -> sum + getRenderPrice(rental), Integer::sum);
-    }
-
-    private int getRenderPrice(Rental rental) {
-        int rentalPrice = 0;
-        switch (rental.getMovie().getPriceCode()) {
-            case Movie.CHILDREN:
-                rentalPrice += 2;
-                if (rental.getDayRented() > 2) rentalPrice += (rental.getDayRented() - 1) * 2;
-                break;
-            case Movie.NEW_RELEASE:
-                rentalPrice += rental.getDayRented() * 3;
-                break;
-            case Movie.REGULAR:
-                rentalPrice += 2;
-                if (rental.getDayRented() > 3) rentalPrice += (rental.getDayRented() - 3) * 3;
-                break;
-            default:
-                break;
-        }
-        return rentalPrice;
+    int amountFor() {
+        return rentals.stream().reduce(0, (sum, rental) -> sum + rental.getPrice(), Integer::sum);
     }
 }
