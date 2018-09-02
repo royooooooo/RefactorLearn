@@ -1,6 +1,6 @@
 package com.thoughtworks.reactor.day1;
 
-public class Movie {
+class Movie {
     static final int CHILDREN = 1;
     static final int REGULAR = 2;
     static final int NEW_RELEASE = 3;
@@ -15,7 +15,4 @@ public class Movie {
         return priceCode;
     }
 
-    public void setPriceCode(int priceCode) {
-        this.priceCode = priceCode;
-    }
 }
